@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    //example of closure
+
+    // function makeAdder(x) {
+    //   return function (y) {
+    //     return x + y;
+    //   };
+    // }
+
+    // const add5 = makeAdder(5);
+    // const add10 = makeAdder(10);
+
+    // console.log(add5(2)); // 7
+    // console.log(add10(2)); // 12
+
+
+//   mini project for closures
+//   -------------------------
+    function Outer(color) {
+        return function () {
+            document.body.style.backgroundColor = `${color}`;
+        }
+    };
+    document.getElementById('orange').onclick = Outer("orange");
+    document.getElementById('green').onclick = Outer("green");
+
+</script>
+
+</html>
